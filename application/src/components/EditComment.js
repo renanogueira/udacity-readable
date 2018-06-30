@@ -14,7 +14,7 @@ class EditComment extends Component {
 
 	componentWillReceiveProps(nextProps) {
 		let { comment } = nextProps.comment;
-		if (comment.deleted === true) window.location = "/notFound";
+		if (comment.deleted === undefined) window.location = "/notFound";
 		this.setState({ author: comment.author, body: comment.body });
 	}
 

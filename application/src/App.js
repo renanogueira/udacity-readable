@@ -19,18 +19,17 @@ class App extends Component {
 						<Link to="/">Readable Project</Link>
 					</h1>
 				</header>
-				<Route
-					exact
-					path="/"
-					render={props => (
-						<main>
-							<Categories {...props} />
-							<Posts {...props} />
-						</main>
-					)}
-				/>
 				<Switch>
-					<Route exact path="/notFound" component={NotFound} />
+					<Route
+						exact
+						path="/"
+						render={props => (
+							<main>
+								<Categories {...props} />
+								<Posts {...props} />
+							</main>
+						)}
+					/>
 					<Route
 						exact
 						path="/:category"
@@ -45,6 +44,7 @@ class App extends Component {
 					<Route exact path="/:category/:id" component={Post} />
 					<Route exact path="/posts/:id/edit" component={EditPost} />
 					<Route exact path="/comments/:id/edit" component={EditComment} />
+					<Route exact path="*" component={NotFound} />
 				</Switch>
 			</div>
 		);

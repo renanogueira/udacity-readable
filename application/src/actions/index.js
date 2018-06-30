@@ -119,7 +119,6 @@ export function deltComment(id) {
 }
 
 export function vote(id, vote, path, post) {
-	console.warn(id, vote, path, post);
 	let actionType = post
 		? VOTE_INTO_POST
 		: path === "posts"

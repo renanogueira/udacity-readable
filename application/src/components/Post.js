@@ -5,16 +5,12 @@ import { connect } from "react-redux";
 import { capitalize } from "../utils/helpers";
 import Moment from "moment";
 import Comments from "./Comments";
+import NotFound from "./NotFound";
 
 class Post extends Component {
 	componentDidMount() {
 		this.props.retrievePost(this.props.match.params.id);
 		this.props.retrieveComments(this.props.match.params.id);
-	}
-
-	componentWillReceiveProps(nextProps) {
-		let { post } = nextProps.post;
-		if (post.deleted) window.location = "/notFound";
 	}
 
 	_deletePost = id => {
@@ -32,7 +28,7 @@ class Post extends Component {
 	render() {
 		let { post } = this.props.post;
 		let { comments } = this.props.comments;
-		return (
+		return Object.keys(post).length > 0 && post.error === undefined ? (
 			<main style={{ padding: 10 }}>
 				<div className="back-btn-wrapper">
 					<button className="del">
@@ -83,6 +79,8 @@ class Post extends Component {
 				</section>
 				<Comments id={this.props.match.params.id} />
 			</main>
+		) : (
+			<NotFound />
 		);
 	}
 }

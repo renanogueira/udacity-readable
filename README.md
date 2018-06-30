@@ -6,12 +6,19 @@ This is a project for Udacity's React and Redux course.
 
 To get started:
 
-* install all project dependencies with `npm install`
-* start the development server with `npm start`
+- install all projects dependencies with `npm install`
+- start the development servers with `npm start`
 
 ## Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+
+## Install Application
+
+- Install and start the Application
+- `cd application`
+- `npm install`
+- `npm start`
 
 # Readable API Server
 
@@ -21,10 +28,10 @@ This repository includes the code for the backend API Server that you'll use to 
 
 ## Install API Server
 
-* Install and start the API server
-    - `cd api-server`
-    - `npm install`
-    - `node server`
+- Install and start the API server
+  - `cd api-server`
+  - `npm install`
+  - `npm start`
 
 ## Docs
 
